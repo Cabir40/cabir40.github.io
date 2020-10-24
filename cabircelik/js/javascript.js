@@ -4,10 +4,10 @@ $(document).ready(function () {
 
   $('body').scrollspy({
     target: "#mainnavbar",
-    offset: 50
+    offset: 49
   }); //scroll spy özelliği
 
-  $("#navbarColor01 a").on('click', function (event) { //smoot scroll
+  $("#mainnavbar a").on('click', function (event) { //smoot scroll
     if (this.hash !== "") {
 
       event.preventDefault();
@@ -15,10 +15,10 @@ $(document).ready(function () {
       var hash = this.hash; // hash leri depola
 
       $('html, body').animate({ //animate fonk
-        scrollTop: $(hash).offset().top
+        scrollTop: $(hash).offset().top-50
       }, 1000, function () {
 
-        window.location.hash = hash;
+       // window.location.hash = hash;
       });
     }
   });
